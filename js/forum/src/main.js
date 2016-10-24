@@ -1,4 +1,4 @@
-import app from 'flarum/app';
+import { extend } from 'flarum/extend';
 
 app.initializers.add('xengine-markdown-editor', function() {
     alert('Hello, world!');

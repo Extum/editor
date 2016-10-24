@@ -1,10 +1,10 @@
-System.register('xengine/flarum-markdown-editor/main', ['flarum/app'], function (_export) {
+System.register('xengine/flarum-markdown-editor/main', ['flarum/extend'], function (_export) {
     'use strict';
 
-    var app;
+    var extend;
     return {
-        setters: [function (_flarumApp) {
-            app = _flarumApp['default'];
+        setters: [function (_flarumExtend) {
+            extend = _flarumExtend.extend;
         }],
         execute: function () {
 
