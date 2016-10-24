@@ -2,7 +2,7 @@ var flarum = require('flarum-gulp');
 
 flarum({
     modules: {
-        'xengine/flarum-markdown-editor': [
+        'xengine/mdeditor': [
             'src/**/*.js'
         ]
     }
