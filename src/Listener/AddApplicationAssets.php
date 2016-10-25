@@ -20,12 +20,5 @@ class AddApplicationAssets{
             ]);
             $event->addBootstrapper('xengine/mdeditor/main');
         }
-        /*if ($event->isAdmin()) {
-            $event->addAssets([
-                __DIR__.'/../../js/admin/dist/extension.js',
-                __DIR__.'/../../less/admin/extension.less',
-            ]);
-            $event->addBootstrapper('sijad/pages/main');
-        }*/
     }
 }
