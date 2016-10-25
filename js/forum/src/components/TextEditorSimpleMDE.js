@@ -10,6 +10,7 @@ export default class TextEditorSimpleMDE extends TextEditor {
         this.value = m.prop(this.props.value || '');
         this.loading = false;
         m.redraw(true);
+        console.log('€');
     }
 
     view() {
