@@ -60,27 +60,40 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                     key: 'configTextarea',
                     value: function configTextarea(element, isInitialized) {
                         if (isInitialized) return;
+                        console.log('mael');
                         this.simpleMDE = new SimpleMDE({
                             element: element,
-                            spellChecker: false
+                            spellChecker: false,
+                            placeholder: this.props.placeholder
                         });
-                        console.log('Asd');
+                        this.editorInited(this.simpleMDE);
                     }
-
-                    /**
-                     * Handle input into the textarea.
-                     *
-                     * @param {String} value
-                     */
                 }, {
-                    key: 'oninput',
-                    value: function oninput(value) {
-                        console.log(value);
-                        console.log('MURTEKE');
+                    key: 'editorInited',
+                    value: function editorInited(editor) {
+                        var _this = this;
+
+                        editor.value(this.value());
+                        var onChange = function onChange() {
+                            _this.oninput(editor.value());
+                        };
+                        editor.codemirror.on('change', onChange);
+                    }
+                }, {
+                    key: 'setValue',
+                    value: function setValue(value) {
+                        this.simpleMDE.value(value);
                     }
                 }, {
                     key: 'onunload',
-                    value: function onunload() {}
+                    value: function onunload() {
+                        var editor = this.simpleMDE();
+                        if (editor) {
+                            editor.toTextArea();
+                            this.simpleMDE = null;
+                        }
+                        babelHelpers.get(Object.getPrototypeOf(TextEditorSimpleMDE.prototype), 'onunload', this).call(this);
+                    }
                 }, {
                     key: 'onsubmit',
                     value: function onsubmit() {
