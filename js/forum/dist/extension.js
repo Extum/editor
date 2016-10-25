@@ -26,7 +26,7 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                     value: function init() {
                         this.value = m.prop(this.props.value || '');
                         this.loading = false;
-                        console.log('Ablan star bebeğim');
+                        m.redraw(true);
                     }
                 }, {
                     key: 'view',
