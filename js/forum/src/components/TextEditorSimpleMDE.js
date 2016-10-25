@@ -38,26 +38,34 @@ export default class TextEditorSimpleMDE extends TextEditor {
 
     configTextarea(element, isInitialized) {
         if (isInitialized) return;
+        console.log('mael');
         this.simpleMDE = new SimpleMDE({
             element: element,
             spellChecker : false,
+            placeholder : this.props.placeholder
         })
-        console.log('Asd');
+        this.editorInited(this.simpleMDE);
     }
-    /**
-     * Handle input into the textarea.
-     *
-     * @param {String} value
-     */
-    oninput(value) {
-        console.log(value);
-        console.log('MURTEKE');
+    editorInited(editor) {
+        editor.value(this.value());
+        const onChange = () => {
+            this.oninput(editor.value());
+        };
+        editor.codemirror.on('change', onChange);
+    }
+
+    setValue(value) {
+        this.simpleMDE.value(value);
     }
 
     onunload() {
-
+        const editor = this.simpleMDE();
+        if (editor) {
+            editor.toTextArea();
+            this.simpleMDE = null;
+        }
+        super.onunload();
     }
-
     onsubmit() {
         const editor = this.simpleMDE;
         if (editor) {
