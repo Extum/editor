@@ -3,7 +3,6 @@
 /* global tinymce */
 
 import TextEditor from 'flarum/components/TextEditor';
-import listItems from 'flarum/helpers/listItems';
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
 
 export default class TextEditorSimpleMDE extends TextEditor {

@@ -1,16 +1,14 @@
-System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/components/TextEditor', 'flarum/helpers/listItems', 'flarum/components/LoadingIndicator'], function (_export) {
+System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/components/TextEditor', 'flarum/components/LoadingIndicator'], function (_export) {
     /* global $ */
     /* global m */
     /* global tinymce */
 
     'use strict';
 
-    var TextEditor, listItems, LoadingIndicator, TextEditorSimpleMDE;
+    var TextEditor, LoadingIndicator, TextEditorSimpleMDE;
     return {
         setters: [function (_flarumComponentsTextEditor) {
             TextEditor = _flarumComponentsTextEditor['default'];
-        }, function (_flarumHelpersListItems) {
-            listItems = _flarumHelpersListItems['default'];
         }, function (_flarumComponentsLoadingIndicator) {
             LoadingIndicator = _flarumComponentsLoadingIndicator['default'];
         }],
@@ -92,6 +90,7 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
 
             app.initializers.add('xengine-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
+                    console.log('a');
                     this.editor = new TextEditorSimpleMDE({
                         submitLabel: this.props.submitLabel,
                         placeholder: this.props.placeholder,
