@@ -4,6 +4,7 @@
 
 import TextEditor from 'flarum/components/TextEditor';
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
+import listItems from 'flarum/helpers/listItems';
 
 export default class TextEditorSimpleMDE extends TextEditor {
     init() {
@@ -23,7 +24,12 @@ export default class TextEditorSimpleMDE extends TextEditor {
                     ) :
                     (
                         <div>
-                            <textarea config={this.configTextarea.bind(this)} class="TextEditor-Container"></textarea>
+                            <div>
+                                <textarea config={this.configTextarea.bind(this)} class="TextEditor-Container"></textarea>
+                            </div>
+                            <ul className="TextEditor-controls Composer-footer">
+                                {listItems(this.controlItems().toArray())}
+                            </ul>
                         </div>
                     )}
             </div>

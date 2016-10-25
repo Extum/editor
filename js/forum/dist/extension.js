@@ -1,16 +1,18 @@
-System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/components/TextEditor', 'flarum/components/LoadingIndicator'], function (_export) {
+System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/components/TextEditor', 'flarum/components/LoadingIndicator', 'flarum/helpers/listItems'], function (_export) {
     /* global $ */
     /* global m */
     /* global tinymce */
 
     'use strict';
 
-    var TextEditor, LoadingIndicator, TextEditorSimpleMDE;
+    var TextEditor, LoadingIndicator, listItems, TextEditorSimpleMDE;
     return {
         setters: [function (_flarumComponentsTextEditor) {
             TextEditor = _flarumComponentsTextEditor['default'];
         }, function (_flarumComponentsLoadingIndicator) {
             LoadingIndicator = _flarumComponentsLoadingIndicator['default'];
+        }, function (_flarumHelpersListItems) {
+            listItems = _flarumHelpersListItems['default'];
         }],
         execute: function () {
             TextEditorSimpleMDE = (function (_TextEditor) {
@@ -41,7 +43,16 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                             ) : m(
                                 'div',
                                 null,
-                                m('textarea', { config: this.configTextarea.bind(this), 'class': 'TextEditor-Container' })
+                                m(
+                                    'div',
+                                    null,
+                                    m('textarea', { config: this.configTextarea.bind(this), 'class': 'TextEditor-Container' })
+                                ),
+                                m(
+                                    'ul',
+                                    { className: 'TextEditor-controls Composer-footer' },
+                                    listItems(this.controlItems().toArray())
+                                )
                             )
                         );
                     }
@@ -91,7 +102,6 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
 
             app.initializers.add('xengine-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
-                    console.log('asda');
                     this.editor = new TextEditorSimpleMDE({
                         submitLabel: this.props.submitLabel,
                         placeholder: this.props.placeholder,
@@ -101,8 +111,6 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
                     });
                 });
             });
-
-            //zunk
         }
     };
 });

@@ -5,6 +5,7 @@
     "gulp": "^3.8.11"
   },
   "dependencies": {
+    "browserify": "^13.1.1",
     "simplemde": "^1.11.2"
   }
 }

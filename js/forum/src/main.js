@@ -6,7 +6,6 @@ import TextEditorSimpleMDE from 'xengine/mdeditor/components/TextEditorSimpleMDE
 
 app.initializers.add('xengine-mdeditor', () => {
     extend(ComposerBody.prototype, 'init', function init() {
-        console.log('asda');
         this.editor = new TextEditorSimpleMDE({
             submitLabel: this.props.submitLabel,
             placeholder: this.props.placeholder,
@@ -16,5 +15,3 @@ app.initializers.add('xengine-mdeditor', () => {
         });
     });
 });
-
-//zunk
