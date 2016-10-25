@@ -59,11 +59,18 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'configTextarea',
                     value: function configTextarea(element, isInitialized) {
+                        var _this = this;
+
                         if (isInitialized) return;
                         this.simpleMDE = new SimpleMDE({
                             element: element,
                             spellChecker: false
                         });
+                        var handler = function handler() {
+                            _this.onsubmit();
+                            m.redraw();
+                        };
+                        $(element).bind('keydown', 'ctrl+return', handler);
                     }
 
                     /**

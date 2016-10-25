@@ -42,6 +42,11 @@ export default class TextEditorSimpleMDE extends TextEditor {
             element: element,
             spellChecker : false,
         })
+        const handler = () => {
+            this.onsubmit();
+            m.redraw();
+        };
+        $(element).bind('keydown', 'ctrl+return', handler);
     }
     /**
      * Handle input into the textarea.
