@@ -49,6 +49,7 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'configTextarea',
                     value: function configTextarea(element, isInitialized) {
+                        console.log(element);
                         if (isInitialized) return;
                         this.simpleMDE = new SimpleMDE({
                             element: element
