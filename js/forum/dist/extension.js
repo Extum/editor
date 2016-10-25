@@ -31,7 +31,6 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'view',
                     value: function view() {
-                        console.log('asd');
                         return m(
                             'div',
                             { className: 'TextEditor TextEditor-SimpleMDE' },
@@ -49,7 +48,6 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'configTextarea',
                     value: function configTextarea(element, isInitialized) {
-                        console.log(element);
                         if (isInitialized) return;
                         this.simpleMDE = new SimpleMDE({
                             element: element

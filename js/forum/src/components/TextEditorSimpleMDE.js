@@ -13,7 +13,6 @@ export default class TextEditorSimpleMDE extends TextEditor {
     }
 
     view() {
-        console.log('asd');
         return (
             <div className="TextEditor TextEditor-SimpleMDE">
                 {this.loading ?
@@ -32,7 +31,6 @@ export default class TextEditorSimpleMDE extends TextEditor {
     }
 
     configTextarea(element, isInitialized) {
-        console.log(element);
         if (isInitialized) return;
         this.simpleMDE = new SimpleMDE({
             element: element
