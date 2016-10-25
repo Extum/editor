@@ -41,8 +41,16 @@ export default class TextEditorSimpleMDE extends TextEditor {
         this.simpleMDE = new SimpleMDE({
             element: element,
             spellChecker : false,
-
         })
+    }
+    /**
+     * Handle input into the textarea.
+     *
+     * @param {String} value
+     */
+    oninput(value) {
+        console.log(value);
+        console.log('MURTEKE');
     }
 
     onunload() {

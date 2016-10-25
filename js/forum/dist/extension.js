@@ -63,8 +63,19 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                         this.simpleMDE = new SimpleMDE({
                             element: element,
                             spellChecker: false
-
                         });
+                    }
+
+                    /**
+                     * Handle input into the textarea.
+                     *
+                     * @param {String} value
+                     */
+                }, {
+                    key: 'oninput',
+                    value: function oninput(value) {
+                        console.log(value);
+                        console.log('MURTEKE');
                     }
                 }, {
                     key: 'onunload',
