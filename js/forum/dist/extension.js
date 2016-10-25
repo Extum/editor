@@ -16,9 +16,7 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
 
             app.initializers.add('xengine-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
-                    console.log(this.editor);
-                    console.log(this.editor.element);
-                    //var simplemde = new SimpleMDE({element : document.getElementsByClassName('TextEditor')});
+                    this.editor = new SimpleMDE();
                 });
             });
 
