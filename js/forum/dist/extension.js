@@ -1,7 +1,7 @@
-System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum/components/ComposerBody', 'flarum/components/Composer'], function (_export) {
+System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum/components/ComposerBody', 'flarum/components/Composer', 'simplemde'], function (_export) {
     'use strict';
 
-    var extend, app, ComposerBody, Composer;
+    var extend, app, ComposerBody, Composer, SimpleMDE;
     return {
         setters: [function (_flarumExtend) {
             extend = _flarumExtend.extend;
@@ -11,12 +11,14 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
             ComposerBody = _flarumComponentsComposerBody['default'];
         }, function (_flarumComponentsComposer) {
             Composer = _flarumComponentsComposer['default'];
+        }, function (_simplemde) {
+            SimpleMDE = _simplemde['default'];
         }],
         execute: function () {
 
             app.initializers.add('xengine-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
-                    console.log(this.editor);
+                    var simplemde = new SimpleMDE({ element: this.editor });
                 });
             });
         }

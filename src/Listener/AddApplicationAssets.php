@@ -16,6 +16,7 @@ class AddApplicationAssets{
         if ($event->isForum()) {
             $event->addAssets([
                 __DIR__.'/../../js/forum/dist/extension.js',
+                __DIR__.'/../../js/forum/dist/simplemde.js',
                // __DIR__.'/../../less/forum/extension.less',
             ]);
             $event->addBootstrapper('xengine/mdeditor/main');
