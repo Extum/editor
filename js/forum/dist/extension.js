@@ -26,6 +26,7 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                     value: function init() {
                         this.value = m.prop(this.props.value || '');
                         this.loading = false;
+                        console.log('Ablan star bebeğim');
                     }
                 }, {
                     key: 'view',
@@ -90,7 +91,7 @@ System.register('xengine/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
 
             app.initializers.add('xengine-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
-                    console.log('a');
+                    console.log('asda');
                     this.editor = new TextEditorSimpleMDE({
                         submitLabel: this.props.submitLabel,
                         placeholder: this.props.placeholder,

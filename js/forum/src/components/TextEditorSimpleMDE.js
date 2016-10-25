@@ -9,6 +9,7 @@ export default class TextEditorSimpleMDE extends TextEditor {
     init() {
         this.value = m.prop(this.props.value || '');
         this.loading = false;
+        console.log('Ablan star bebeğim');
     }
 
     view() {
