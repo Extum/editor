@@ -27,11 +27,11 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                         this.value = m.prop(this.props.value || '');
                         this.loading = false;
                         m.redraw(true);
-                        console.log('€');
                     }
                 }, {
                     key: 'view',
                     value: function view() {
+                        console.log('asd');
                         return m(
                             'div',
                             { className: 'TextEditor TextEditor-SimpleMDE' },
