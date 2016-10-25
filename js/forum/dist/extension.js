@@ -42,7 +42,7 @@ System.register('xengine/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                             ) : m(
                                 'div',
                                 null,
-                                m('textarea', { 'class': 'TextEditor-Container' })
+                                m('textarea', { config: this.configTextarea.bind(this), 'class': 'TextEditor-Container' })
                             )
                         );
                     }

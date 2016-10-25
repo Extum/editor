@@ -24,7 +24,7 @@ export default class TextEditorSimpleMDE extends TextEditor {
                     ) :
                     (
                         <div>
-                            <textarea class="TextEditor-Container"></textarea>
+                            <textarea config={this.configTextarea.bind(this)} class="TextEditor-Container"></textarea>
                         </div>
                     )}
             </div>
@@ -35,7 +35,7 @@ export default class TextEditorSimpleMDE extends TextEditor {
         console.log(element);
         if (isInitialized) return;
         this.simpleMDE = new SimpleMDE({
-            element : element
+            element: element
         })
     }
 
