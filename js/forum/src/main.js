@@ -7,7 +7,7 @@ import Composer from 'flarum/components/Composer';
 app.initializers.add('xengine-mdeditor', () => {
     extend(ComposerBody.prototype, 'init', function init() {
         console.log(this.editor);
-        console.log(document.getElementsByClassName('TextEditor'));
+        console.log(this.editor.element);
         //var simplemde = new SimpleMDE({element : document.getElementsByClassName('TextEditor')});
     });
 });
