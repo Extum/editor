@@ -27,8 +27,12 @@ app.initializers.add('xengine-mdeditor', () => {
     extend(Composer.prototype, 'fullScreen', () => {
         var CodeMirror = $('.CodeMirror'),
             height = $(window).height() - 260;
-
+            $('body').css('overflow','hidden');
         CodeMirror.css('height', height);
+    });
+
+    extend(Composer.prototype, 'exitFullScreen', () => {
+        $('body').css('overflow','');
     })
 
     extend(ComposerBody.prototype, 'init', function init() {
