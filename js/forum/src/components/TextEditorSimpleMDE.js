@@ -38,7 +38,6 @@ export default class TextEditorSimpleMDE extends TextEditor {
 
     configTextarea(element, isInitialized) {
         if (isInitialized) return;
-        console.log('mael');
         this.simpleMDE = new SimpleMDE({
             element: element,
             spellChecker : false,
