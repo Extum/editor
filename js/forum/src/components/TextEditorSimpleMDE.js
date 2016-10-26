@@ -1,6 +1,5 @@
 /* global $ */
 /* global m */
-/* global tinymce */
 
 import TextEditor from 'flarum/components/TextEditor';
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
@@ -41,10 +40,16 @@ export default class TextEditorSimpleMDE extends TextEditor {
         this.simpleMDE = new SimpleMDE({
             element: element,
             spellChecker : false,
+            lineWrapping: true,
             placeholder : this.props.placeholder
         })
         this.editorInited(this.simpleMDE);
     }
+
+    getEditor() {
+        return this.simpleMDE;
+    }
+
     editorInited(editor) {
         editor.value(this.value());
         const onChange = () => {
