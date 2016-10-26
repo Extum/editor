@@ -21,4 +21,5 @@ class AddApplicationAssets{
             $event->addBootstrapper('xengine/mdeditor/main');
         }
     }
+
 }
