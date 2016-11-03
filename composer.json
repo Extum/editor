@@ -1,5 +1,5 @@
 {
-    "name": "xengine/flarum-markdown-editor",
+    "name": "xengine/flarum-ext-markdown-editor",
     "description": "WYSIWYG Editor for Flarum",
     "authors": [
         {
@@ -9,7 +9,7 @@
     ],
     "type": "flarum-extension",
     "require": {
-        "flarum/core": "^0.1.0-beta.6"
+        "flarum/core": "^0.1.0-beta.5"
     },
     "autoload": {
         "psr-4": {
