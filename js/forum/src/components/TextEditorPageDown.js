@@ -1,7 +1,4 @@
-import Component from 'flarum/Component';
-import ItemList from 'flarum/utils/ItemList';
 import listItems from 'flarum/helpers/listItems';
-import Button from 'flarum/components/Button';
 import TextEditor from 'flarum/components/TextEditor';
 
 export default class TextEditorPageDown extends TextEditor {
