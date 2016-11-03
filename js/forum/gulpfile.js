@@ -2,7 +2,7 @@ var flarum = require('flarum-gulp');
 
 flarum({
     files: [
-        'library/SimpleMDE.js'
+        'bower_components/pagedown-flarum/dist/Markdown.Editor.min.js',
     ],
     modules: {
         'xengine/mdeditor': [
