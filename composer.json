@@ -18,7 +18,12 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "Markdown Editor"
+            "title": "Markdown Editor",
+            "icon": {
+                "name": "pencil",
+                "backgroundColor": "#2e3436",
+                "color": "#eeeeec"
+            }
         }
     }
 }
