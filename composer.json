@@ -1,15 +1,15 @@
 {
     "name": "xengine/flarum-ext-markdown-editor",
-    "description": "WYSIWYG Editor for Flarum",
+    "description": "Simple Markdown Editor for Flarum.",
     "authors": [
         {
-            "name": "XEngine",
-            "email": "tidusdragonh3art@gmail.com"
+            "name": "Extum",
+            "email": "ardacebi1@gmail.com"
         }
     ],
     "type": "flarum-extension",
     "require": {
-        "flarum/core": "^0.1.0-beta.5"
+        "flarum/core": "^0.1.0-beta.7"
     },
     "autoload": {
         "psr-4": {
