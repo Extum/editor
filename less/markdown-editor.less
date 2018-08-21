@@ -27,13 +27,19 @@
 
 .wmd-button-row
 {
+  overflow-y: hidden;
+  overflow-x: auto;
   position: relative;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
   padding: 0px;
-  height: 20px;
+  min-height: 30px;
+
+  &::-webkit-scrollbar { width: 3px; height: 3px; }
+  &::-webkit-scrollbar-track { background: #ddd; }
+  &::-webkit-scrollbar-thumb { background: #adadad; }
 }
 
 .wmd-spacer
